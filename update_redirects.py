@@ -17,7 +17,7 @@ def clean_exit(comment):
 	issue.edit(state="closed")
 	sys.exit()
 
-if issue.user.login == "paramt" and issue.get_labels()[0].name == "update redirects":
+if issue.user.login == "AnandChowdhary" and issue.get_labels()[0].name == "update redirects":
 	os.system("git config --local user.email 'action@github.com'")
 	os.system("git config --local user.name 'GitHub Action'")
 
@@ -33,7 +33,7 @@ if issue.user.login == "paramt" and issue.get_labels()[0].name == "update redire
 			lines = csv.readlines()
 			for line in lines:
 				if line.split(",")[0] == short:
-					clean_exit(f"The redirect `go.param.me/`{short}` already exists!")
+					clean_exit(f"The redirect `anand.link/`{short}` already exists!")
 
 		# Add the short,long URL pair to redirects.csv
 		with open("redirects.csv", "a") as csv:
@@ -58,6 +58,6 @@ if issue.user.login == "paramt" and issue.get_labels()[0].name == "update redire
 
 		if removed:
 			os.system(f"git commit -m 'Remove redirect: {issue.body}' -m '#{os.environ['ISSUE']}' -a")
-			clean_exit(f"The redirect `go.param.me/{issue.body}` has been removed!")
+			clean_exit(f"The redirect `anand.link/{issue.body}` has been removed!")
 		else:
-			clean_exit(f"The redirect `go.param.me/{issue.body}` doesn't exist!")
+			clean_exit(f"The redirect `anand.link/{issue.body}` doesn't exist!")
