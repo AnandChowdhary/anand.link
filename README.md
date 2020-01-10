@@ -28,6 +28,10 @@ Short URL --> Long URL
 
 In order to remove a redirect, the issue must be created by me, be titled "Remove URL", and have the <kbd>update redirects</kbd> label. The issue body should contain the short URL to remove.
 
+### Modify
+
+If you'd like to create your own URL shortener, fork this repo, modify [config.js](config.js), the meta redirect in [index.html](index.html), and the domain name in [CNAME](CNAME).
+
 ## 📄 License
 
 - [MIT](./LICENSE) © [Anand Chowdhary](https://anandchowdhary.com)
